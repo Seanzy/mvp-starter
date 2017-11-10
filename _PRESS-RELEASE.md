@@ -17,28 +17,31 @@ Once the project moves into development, the press release can be used as a touc
  -->
  
 ## Heading ##
-  > Name the product in a way the reader (i.e. your target customers) will understand.
+  Message Sender
 
 ## Sub-Heading ##
-  > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+  A cool way to leave messages for Sean
 
 ## Summary ##
-  > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
+  Use this to send a message to Sean and he will get back to you as soon as his secretary has time!
 
 ## Problem ##
-  > Describe the problem your product solves.
+  It's so hard to get a hold of Sean because he's more popular than the bomb.com. So this is a great way to get in touch with him. Sean can be bribed with ice cream and cookies. 
 
 ## Solution ##
-  > Describe how your product elegantly solves the problem.
+  This web app allows you to send a message that gets saved to a database Sean's secretary can check for him when they have time. 
 
 ## Quote from You ##
-  > A quote from a spokesperson in your company.
+  "Know one thing about everything and everything about one thing"
 
 ## How to Get Started ##
-  > Describe how easy it is to get started.
+  Simply enter a message you would like to send Sean and click 'Send'. 
 
 ## Customer Quote ##
-  > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
+  "Wow, I never thought I would be so privileged to communicate with Seanzy. But this web app makes it maybe possible!" -Mark Cuban
 
 ## Closing and Call to Action ##
-  > Wrap it up and give pointers where the reader should go next.
+  This is the alpha and the omega of your future internet interactions. 
+  
+  
+  
