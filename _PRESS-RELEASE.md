@@ -43,5 +43,26 @@ Once the project moves into development, the press release can be used as a touc
 ## Closing and Call to Action ##
   This is the alpha and the omega of your future internet interactions. 
   
+  Setup
+  from root in CLI: 
+  npm install
+  npm install -g webpack --save
+  I already have brew
+  npm install nodemon --save
+  npm run react-dev (minimize)
+  npm run server-dev (now visit localhost:3000 or whichever port, each refresh will log to this CL, so put a console log in the first get request)
+  
+  mongod, then mongo from another CL tab, type db to confirm
+  (try http://localhost:27017/)
+  db
+  use (db from above)
   
   
+  
+  
+  
+  
+  Things to Do
+  Add favicon
+  Practice redoing this entire sprint from memory until you can do a presentation with it, 
+  Then do it in angular

@@ -7,7 +7,7 @@ var items = require('../database-mongo');
 var app = express();
 
 // UNCOMMENT FOR REACT
-// app.use(express.static(__dirname + '/../react-client/dist'));
+app.use(express.static(__dirname + '/../react-client/dist'));
 
 // UNCOMMENT FOR ANGULAR
 // app.use(express.static(__dirname + '/../angular-client'));
@@ -19,6 +19,7 @@ app.get('/items', function (req, res) {
       res.sendStatus(500);
     } else {
       res.json(data);
+      console.log('sean');
     }
   });
 });
