@@ -27,18 +27,23 @@ class App extends React.Component {
     });
   }
   
-  click() {
-    console.log('got here'); // successful
-    //run post request with message
+  // click() {
+  //   console.log(Input.props); // successful
+  //   //run post request with message
+  //   //pass message data to server.js? 
+  //   // $.ajax({
+  //   //   type: 'POST',
+  //   //   url: '/items'
+      
+  //   // })
     
-  };
+  // };
 
   render () {
     return (<div>
       <h1>Seanzy's Messenger</h1>
       <List items={this.state.items}/>
       <Input />
-      <button onClick={this.click}>Send</button>
       
     </div>)
   }

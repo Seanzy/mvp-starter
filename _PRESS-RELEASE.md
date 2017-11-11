@@ -57,7 +57,8 @@ Once the project moves into development, the press release can be used as a touc
   db
   use (db from above)
   
-  
+Things I Learned
+Did I bind my React component methods? 
   
   
   

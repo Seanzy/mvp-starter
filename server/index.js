@@ -25,15 +25,15 @@ app.get('/items', function(req, res) {
   });
 });
 
-app.post('/items', function(req, res) {
-  items.addMessages(function(err, data) {
-    if (err) {
-      console.log('*****Error Line 31 server index.js')
-    } else {
-      console.log('Coooooooooooool good job');
-    }
-  });
-});
+// app.post('/items', function(req, res) {
+//   items.addMessages(function(err, data) {
+//     if (err) {
+//       console.log('*****Error Line 31 server index.js')
+//     } else {
+//       console.log('Coooooooooooool good job');
+//     }
+//   });
+// });
 
 app.listen(3000, function() {
   console.log('listening on port 3000!');

@@ -1,4 +1,5 @@
 import React from 'react';
+import $ from 'jquery';
 
 class Input extends React.Component {
   constructor(props) {
@@ -7,7 +8,9 @@ class Input extends React.Component {
       message: '',
     }
     
+    //did you bind your method? 
     this.onChange = this.onChange.bind(this);
+    this.click = this.click.bind(this);
   }
   
   onChange(e) {
@@ -16,11 +19,26 @@ class Input extends React.Component {
     });
   }
   
+  click() {
+    console.log(this.state.message)
+    $.ajax({
+      type: 'POST',
+      url: '/items',
+      success: function() {
+        console.log('SUCCESSFUL POST', this.state.message);
+      },
+      error: function(err) {
+        console.log('error happened', err); 
+      } 
+    })
+  }
+  
   render() {
     return (
       <div>
       <input value={this.state.message} onChange={this.onChange} type="text" placeholder="Enter your message to Sean here" />    
       <p>{this.state.message}</p>
+      <button onClick={this.click}>Send</button>
       </div>  
     )
   }  
