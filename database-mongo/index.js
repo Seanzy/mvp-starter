@@ -23,7 +23,9 @@ var selectAll = function(callback) {
     if(err) {
       callback(err, null);
     } else {
-      callback(null, items);
+      // console.log('selectAll() working')
+      console.log('items', items);
+      // callback(null, items);
     }
   });
 };

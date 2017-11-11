@@ -13,13 +13,24 @@ app.use(express.static(__dirname + '/../react-client/dist'));
 // app.use(express.static(__dirname + '/../angular-client'));
 // app.use(express.static(__dirname + '/../node_modules'));
 
-app.get('/items', function (req, res) {
+app.get('/items', function(req, res) {
   items.selectAll(function(err, data) {
-    if(err) {
+    if (err) {
       res.sendStatus(500);
     } else {
       res.json(data);
-      console.log('sean');
+      // console.log('sean');
+      items.selectAll();  
+    }
+  });
+});
+
+app.post('/items', function(req, res) {
+  items.addMessages(function(err, data) {
+    if (err) {
+      console.log('*****Error Line 31 server index.js')
+    } else {
+      console.log('Coooooooooooool good job');
     }
   });
 });

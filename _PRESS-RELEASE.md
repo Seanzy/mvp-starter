@@ -66,3 +66,34 @@ Once the project moves into development, the press release can be used as a touc
   Add favicon
   Practice redoing this entire sprint from memory until you can do a presentation with it, 
   Then do it in angular
+  
+  
+Questions
+When I click send button, the post request goes in React component or in server file? 
+
+
+  
+  > show dbs
+admin    0.000GB
+fetcher  0.000GB
+local    0.000GB
+
+> use fetcher
+switched to db fetcher
+
+> show collections
+repos
+
+db.repos.find (repos is your collection)
+
+> db.repos.remove({}) to remove all documents
+
+> db.repos.remove({})
+CREATING A COLLECTION
+If the collection does not currently exist, insert operations will create the collection.
+
+
+db.messages.find() to retrieve
+
+
+
