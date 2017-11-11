@@ -10,11 +10,6 @@ var app = express();
 app.use(express.static(__dirname + '/../react-client/dist'));
 app.use(bodyParser.json())
 
-// app.use(function(req, res) {
-//   res.setHeader('content-type': 'text/plain')
-//   res.write('Wow I did it line 15 index.js server')
-//   res.end(JSON.stringify(req.body, null, 2))
-// });
 
 // UNCOMMENT FOR ANGULAR
 // app.use(express.static(__dirname + '/../angular-client'));
@@ -26,7 +21,6 @@ app.get('/items', function(req, res) {
       res.sendStatus(500);
     } else {
       res.json(data);
-      // console.log('sean');
       items.selectAll();  
     }
   });
@@ -34,11 +28,10 @@ app.get('/items', function(req, res) {
 
 app.post('/items', function(req, res) {
   
-  console.log(req.body);
+  //Once the message data arrives here, pass it into addMessages() to add to database.
+  items.addMessage(req.body);
   
   res.end(JSON.stringify(req.body));
- 
-  // console.log(items.addMessage());
   
 });
 

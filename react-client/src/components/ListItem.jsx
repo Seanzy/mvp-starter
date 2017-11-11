@@ -1,9 +1,9 @@
 import React from 'react';
 
-const ListItem = (props) => (
+const Message = (props) => (
   <div>
-    { props.item.description }
+    { props.message }
   </div>
 )
 
-export default ListItem;
+export default Message;

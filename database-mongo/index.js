@@ -12,8 +12,8 @@ db.once('open', function() {
 });
 
 var itemSchema = mongoose.Schema({
-  quantity: Number,
-  description: String
+  // id: Number,
+  message: String,
 });
 
 var Item = mongoose.model('Item', itemSchema);
@@ -24,17 +24,28 @@ var selectAll = function(callback) {
       console.log('wtf!!!');
       callback(err, null);
     } else {
-      // console.log('selectAll() working')
-      // console.log('Posting to Database1!!!!!!!!', items);
-      // callback(null, items);
+
     }
   });
 };
 
-var addMessage = function(callback) {
-  // console.log('Got to addMessage()'); //successful
+var addMessage = function(message, callback) {
+  
+  Item.create({message: message.data}, function (err) {
+  if (err) { 
+    console.log(err);
+  };
+  // saved!
+})
   
 }
 
 module.exports.selectAll = selectAll;
 module.exports.addMessage = addMessage;
+
+
+
+
+
+
+

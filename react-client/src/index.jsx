@@ -9,7 +9,8 @@ class App extends React.Component {
     super(props);
     this.state = { 
       items: [],
-      messages: []
+      messages: [],
+
     }
   }
 
@@ -18,7 +19,7 @@ class App extends React.Component {
       url: '/items', 
       success: (data) => {
         this.setState({
-          items: data
+          items: data,
         })
       },
       error: (err) => {
@@ -26,25 +27,13 @@ class App extends React.Component {
       }
     });
   }
-  
-  // click() {
-  //   console.log(Input.props); // successful
-  //   //run post request with message
-  //   //pass message data to server.js? 
-  //   // $.ajax({
-  //   //   type: 'POST',
-  //   //   url: '/items'
-      
-  //   // })
-    
-  // };
 
   render () {
     return (<div>
       <h1>Seanzy's Messenger</h1>
       <List items={this.state.items}/>
       <Input />
-      
+            
     </div>)
   }
 }
