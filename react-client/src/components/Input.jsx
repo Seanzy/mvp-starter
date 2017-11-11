@@ -20,15 +20,18 @@ class Input extends React.Component {
   }
   
   click() {
-    console.log(this.state.message)
+    // console.log(this.state.message)
     $.ajax({
       type: 'POST',
       url: '/items',
-      success: function() {
-        console.log('SUCCESSFUL POST', this.state.message);
+      data: JSON.stringify({val: this.state.message}),
+      contentType: 'application/json',
+      success: function(data) {
+        console.log('SUCCESSFUL POST', data);
       },
       error: function(err) {
         console.log('error happened', err); 
+        
       } 
     })
   }

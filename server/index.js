@@ -8,6 +8,13 @@ var app = express();
 
 // UNCOMMENT FOR REACT
 app.use(express.static(__dirname + '/../react-client/dist'));
+app.use(bodyParser.json())
+
+// app.use(function(req, res) {
+//   res.setHeader('content-type': 'text/plain')
+//   res.write('Wow I did it line 15 index.js server')
+//   res.end(JSON.stringify(req.body, null, 2))
+// });
 
 // UNCOMMENT FOR ANGULAR
 // app.use(express.static(__dirname + '/../angular-client'));
@@ -25,15 +32,15 @@ app.get('/items', function(req, res) {
   });
 });
 
-// app.post('/items', function(req, res) {
-//   items.addMessages(function(err, data) {
-//     if (err) {
-//       console.log('*****Error Line 31 server index.js')
-//     } else {
-//       console.log('Coooooooooooool good job');
-//     }
-//   });
-// });
+app.post('/items', function(req, res) {
+  
+  console.log(req.body);
+  
+  res.end(JSON.stringify(req.body));
+ 
+  // console.log(items.addMessage());
+  
+});
 
 app.listen(3000, function() {
   console.log('listening on port 3000!');

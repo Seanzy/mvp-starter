@@ -21,13 +21,20 @@ var Item = mongoose.model('Item', itemSchema);
 var selectAll = function(callback) {
   Item.find({}, function(err, items) {
     if(err) {
+      console.log('wtf!!!');
       callback(err, null);
     } else {
       // console.log('selectAll() working')
-      console.log('items', items);
+      // console.log('Posting to Database1!!!!!!!!', items);
       // callback(null, items);
     }
   });
 };
 
+var addMessage = function(callback) {
+  // console.log('Got to addMessage()'); //successful
+  
+}
+
 module.exports.selectAll = selectAll;
+module.exports.addMessage = addMessage;

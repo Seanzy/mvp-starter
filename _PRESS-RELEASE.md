@@ -59,7 +59,10 @@ Once the project moves into development, the press release can be used as a touc
   
 Things I Learned
 Did I bind my React component methods? 
-  
+
+We need to install the body-parser middleware to handle http post requests in Express. It takes the request and stores it in req.body
+
+When sending an AJAX POST request, you have to specify type: 'POST', (default is GET). Also, send the data in an object of form {key: 'value', key2: 'value2'}, or as a query string, it will be converted to querystring anyway using jquery param. ALso, specify the contentType: 'application/json' to make sure it goes across as a json object
   
   
   
