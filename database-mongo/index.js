@@ -1,4 +1,6 @@
 var mongoose = require('mongoose');
+var request = require('request');
+
 mongoose.connect('mongodb://localhost/test');
 
 var db = mongoose.connection;
@@ -36,28 +38,37 @@ var addMessage = function(message, callback) {
     console.log(err);
   }
   // saved!
-})
-  
-var notify = function() {
-  
-  $.ajax({
-    url: 'https://api.clockworksms.com/http/send.aspx',
-    key: '131ee2110d1a8194acb1379bd91ae8fc8554591c',
-    to: '19257055654' //encrypt these phone numbers later?
-    success: function(data) {
-      console.log(data);
-    }
   })
-}
   
 }
+
+// var notify = function() {
+  
+//   console.log('Before notify');
+  
+//   $.ajax({
+//     url: 'https://api.clockworksms.com/http/send.aspx?key=131ee2110d1a8194acb1379bd91ae8fc8554591c&to=19257055654&content=You+have+received+a+new+message+from',
+//     key: '131ee2110d1a8194acb1379bd91ae8fc8554591c',
+//     to: '19257055654', //encrypt these phone numbers later?
+//     content: 'You have received a new message from',
+//     success: function(data) {
+//       console.log('TEXTING WORKED?!888888', data);
+//     },
+//     error: (err) => {
+//       console.log('error texting', err);
+//     }
+//   });
+  
+//   // console.log('After notify');
+// }
+  
 
 module.exports.selectAll = selectAll;
 module.exports.addMessage = addMessage;
+// module.exports.notify = notify;
 
 
-
-
+// https://api.clockworksms.com/http/send.aspx?key=131ee2110d1a8194acb1379bd91ae8fc8554591c&to=19257055654&content=Hello
 
 
 

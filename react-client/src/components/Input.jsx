@@ -20,6 +20,22 @@ class Input extends React.Component {
   }
   
   click() {
+    var delimitedMessage = this.state.message.split(' ').join('+');
+    var url = "https://api.clockworksms.com/http/send.aspx?key=131ee2110d1a8194acb1379bd91ae8fc8554591c&to=19257055654&content=`${delimitedMessage}`"
+    
+    $.ajax({
+      url: url,
+      key: '131ee2110d1a8194acb1379bd91ae8fc8554591c',
+      to: '19257055654', 
+      content: this.state.message,
+      success: function(data) {
+        console.log('TEXTING WORKED?!888888', data);
+      },
+      error: (err) => {
+        console.log('error texting', err);
+      }
+  });
+  
     $.ajax({
       type: 'POST',
       url: '/items',

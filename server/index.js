@@ -26,6 +26,7 @@ app.get('/items', function(reqForMessagesFromDB, sendBackToClient) {
     } else { // success, route matched
       console.log(i, 'Successfully got messaged from DB');
       i++;
+      // sendBackToClient.sendStatus(200);
       sendBackToClient.json(messagesFromDB);
     }
   });
@@ -35,7 +36,9 @@ app.post('/items', function(req, res) {
   
   //Once the message data arrives here, pass it into addMessages() to add to database.
   items.addMessage(req.body);
+  // items.notify();
 
+  // req.sendStatus(201);
   res.end(JSON.stringify(req.body));
   
 });
@@ -45,3 +48,4 @@ app.listen(3000, function() {
 });
 
 
+//number@sms.cricketwireless.net

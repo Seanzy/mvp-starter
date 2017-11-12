@@ -66,10 +66,16 @@ When sending an AJAX POST request, you have to specify type: 'POST', (default is
   
   
   
-  Things to Do
-  Add favicon
-  Practice redoing this entire sprint from memory until you can do a presentation with it, 
-  Then do it in angular
+Things to Do
+Add favicon
+Practice redoing this entire sprint from memory until you can do a presentation with it, 
+Then do it in angular
+Add a login functionality to separate my messages from user messages, or to separate each user's messages and make them visible only to that user. 
+
+allow user to enter their phone number to be notified when their message database changes (once I have changed their database, i.e. once I have responded to their message). 
+
+Fix the broken status codes
+
   
   
 Questions
@@ -81,11 +87,13 @@ Ohhh, so the GET request to that ROUTE is what calls the selectAll function, so 
 
 So I wasn't sending null in as a first param when invoking my callback in SelectAll(). Now I need to make the messages show up, which means I need to take that data and pass it to each list item. 
 
-There is a div being rendered for each message, but no message is showing up in the divs. I keep getting this error about objects are not valid as a React child. So then I added a '.toString' and it rendered [object Object] so that's good. 
+There is a div being rendered for each message, but no message is showing up in the divs. I keep getting this error about objects are not valid as a React child. So then I added a '.toString' and it rendered [object Object] so that's good, but ultimately that didn't work. I had to add .message because my schema has the message property. 
 
 Why can't I include a second param to send back a status code in addMessage() item.create line ?
 
-How do I make my i counter change each time I do a get request? 
+How do I make my i counter change each time I do a get request?
+
+Do Mongoose methods automatically send status codes? Where are these 200 status codes coming from? 
   
   > show dbs
 admin    0.000GB
