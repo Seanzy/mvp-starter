@@ -19,12 +19,12 @@ var itemSchema = mongoose.Schema({
 var Item = mongoose.model('Item', itemSchema);
 
 var selectAll = function(callback) {
-  Item.find({}, function(err, items) {
+  Item.find({}, function(err, messageData) {
     if(err) {
-      console.log('wtf!!!');
+      console('Error when trying to find.')
       callback(err, null);
     } else {
-
+      callback(null, messageData);
     }
   });
 };
@@ -34,9 +34,21 @@ var addMessage = function(message, callback) {
   Item.create({message: message.data}, function (err) {
   if (err) { 
     console.log(err);
-  };
+  }
   // saved!
 })
+  
+var notify = function() {
+  
+  $.ajax({
+    url: 'https://api.clockworksms.com/http/send.aspx',
+    key: '131ee2110d1a8194acb1379bd91ae8fc8554591c',
+    to: '19257055654' //encrypt these phone numbers later?
+    success: function(data) {
+      console.log(data);
+    }
+  })
+}
   
 }
 

@@ -12,15 +12,19 @@ class App extends React.Component {
       messages: [],
 
     }
+    
+  this.componentDidMount = this.componentDidMount.bind(this);
+     
   }
 
   componentDidMount() {
     $.ajax({
       url: '/items', 
-      success: (data) => {
+      success: (data) => { //messageData
         this.setState({
           items: data,
         })
+        
       },
       error: (err) => {
         console.log('err', err);
@@ -32,6 +36,7 @@ class App extends React.Component {
     return (<div>
       <h1>Seanzy's Messenger</h1>
       <List items={this.state.items}/>
+      <div>{this.state.items[0]}</div>
       <Input />
             
     </div>)

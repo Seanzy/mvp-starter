@@ -75,7 +75,17 @@ When sending an AJAX POST request, you have to specify type: 'POST', (default is
 Questions
 When I click send button, the post request goes in React component or in server file? 
 
+How do I initially render messages from my database to my screen? I have to do a GET request. Okay, so where do I do that? In my React component or in my index.js server and why? Well, the barebones repo had that route already built, so that means I should just call the get request from the react component to that route? And I am supposed to initialize from the constructor. So I guess I will have to add a componentWillMount to my input class. That does not feel right, when am I supposed to be adding to my App class versus when should I be adding to my Component Class? I'm thinking I need to just add an init function to my ComponentDidMount in the App class. There's already an AJAX request pre-coded in there that doesn't have any functionality that affects my app, so I will modify that to handle the get request to my server to get the message data. 
 
+Ohhh, so the GET request to that ROUTE is what calls the selectAll function, so I don't need to worry about accessing selectAll() from within the React component. 
+
+So I wasn't sending null in as a first param when invoking my callback in SelectAll(). Now I need to make the messages show up, which means I need to take that data and pass it to each list item. 
+
+There is a div being rendered for each message, but no message is showing up in the divs. I keep getting this error about objects are not valid as a React child. So then I added a '.toString' and it rendered [object Object] so that's good. 
+
+Why can't I include a second param to send back a status code in addMessage() item.create line ?
+
+How do I make my i counter change each time I do a get request? 
   
   > show dbs
 admin    0.000GB

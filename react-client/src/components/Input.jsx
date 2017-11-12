@@ -41,6 +41,7 @@ class Input extends React.Component {
       <p>{this.state.message}</p>
       <button onClick={this.click}>Send</button>
       </div>  
+      
     )
   }  
   

@@ -1,5 +1,42 @@
+body {
+  /*border: 1px solid green;*/
+  background-color: lightgrey;
+}
+
+#app {
+  border: 1px solid red;
+}
+
 div {
     border: 1px solid blue;
     padding: 8px;
     margin: 4px;
+    font-family: 'arial';
+}
+
+input {
+  width: 75%; 
+  height: 15px;
+  border: 2px solid darkblue;
+  border-radius: 5px;
+
+}
+
+button {
+  width: 60px;
+  height: 25px;
+  border: 2px solid darkblue;
+  border-radius: 2px; 
+  font-size: 14px;
+  background-color: darkorange;
+  
+}
+
+p {
+  font-size: 15px;
+  color: darkblue;
+  font-weight: bold;
+  /*border: 1px dotted red;*/
+  /*padding: 1px;*/
+  margin: 6px;
 }

@@ -1,9 +1,10 @@
 import React from 'react';
+// const Timestamp = require('react-timestamp');
 
-const Message = (props) => (
-  <div>
-    { props.message }
-  </div>
+const ListItem = (props) => (
+  <p>
+    You: { props.item.message }
+  </p>
 )
 
-export default Message;
+export default ListItem;

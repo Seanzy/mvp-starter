@@ -15,13 +15,18 @@ app.use(bodyParser.json())
 // app.use(express.static(__dirname + '/../angular-client'));
 // app.use(express.static(__dirname + '/../node_modules'));
 
-app.get('/items', function(req, res) {
-  items.selectAll(function(err, data) {
+var i = 0;
+ 
+app.get('/items', function(reqForMessagesFromDB, sendBackToClient) {
+  items.selectAll(function(err, messagesFromDB) {
     if (err) {
-      res.sendStatus(500);
-    } else {
-      res.json(data);
-      items.selectAll();  
+      console.log(i, '**Unable to retrieve data from DB');
+      i++;
+      sendBackToClient.sendStatus(500);
+    } else { // success, route matched
+      console.log(i, 'Successfully got messaged from DB');
+      i++;
+      sendBackToClient.json(messagesFromDB);
     }
   });
 });
@@ -30,7 +35,7 @@ app.post('/items', function(req, res) {
   
   //Once the message data arrives here, pass it into addMessages() to add to database.
   items.addMessage(req.body);
-  
+
   res.end(JSON.stringify(req.body));
   
 });
@@ -38,4 +43,5 @@ app.post('/items', function(req, res) {
 app.listen(3000, function() {
   console.log('listening on port 3000!');
 });
+
 
